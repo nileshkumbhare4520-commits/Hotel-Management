@@ -1,7 +1,9 @@
-pandas 
-numpy 
+pandas
+numpy
 scikit-learn
 matplotlib
 seaborn
-scipy 
+scipy
 joblib
+flask
+
