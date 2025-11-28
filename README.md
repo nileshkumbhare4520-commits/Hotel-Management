@@ -17,9 +17,9 @@ Analyzed hotel pricing data to find which discounts increase bookings and built 
 ## 2. Feature Engineering  
 Created useful features for analysis & modeling:
 
-- `discount_pct` — percentage discount  
-- `price_per_night` — actual nightly cost  
-- `days_to_checkin` — time gap between snapshot & check-in  
+- `discount_pct`  
+- `price_per_night` 
+- `days_to_checkin`   
 - `checkin_month`  
 - `checkin_weekday`
 
