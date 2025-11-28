@@ -1,78 +1,86 @@
 # Hotel-Management
 
-Analyzed hotel pricing data to find which discounts increase bookings and built visualizations & clusters to optimize discount strategy.
+This project is all about understanding hotel prices and discounts.  
+I explored how different hotels change their prices, how much discount they give,  
+and how these discounts affect booking behavior.
 
-## Project structure
----
-
-## 1. Data Cleaning  
-- Removed duplicates  
-- Converted date columns  
-- Fixed datatypes  
-- Removed invalid room entries  
-- No missing values in dataset  
+I used Python to clean the data, create useful features, visualize patterns, and group hotels into clusters based on their pricing strategy.
 
 ---
 
-## 2. Feature Engineering  
-Created useful features for analysis & modeling:
+## Project Structure 
+---
 
-- `discount_pct`  
-- `price_per_night` 
-- `days_to_checkin`   
-- `checkin_month`  
-- `checkin_weekday`
+## 1. Data Cleaning (What I fixed)
 
-These features help understand pricing behavior and booking patterns.
+- Removed duplicate rows  
+- Converted dates into proper format  
+- Removed wrong values (like -1 rooms)  
+- Checked that no important columns had missing values  
+- Converted price columns into numeric form  
+
+This step helps in making the dataset clean and ready for analysis.
 
 ---
 
-## 3. Exploratory Data Analysis (EDA)  
-Performed multiple visualizations:
+## 2. Feature Engineering (New useful columns)
 
-- Price & Discount distributions  
-- Scatter: Price vs Available Rooms  
-- Hotel Star distribution  
+I created new features to understand hotel behavior better:
+
+- **discount_pct** → how much discount is given  
+- **price_per_night** → actual cost per night after discount  
+- **days_to_checkin** → time gap between today and check-in  
+- **checkin_month**  
+- **checkin_weekday**
+
+These features helped in EDA, clustering, and optional ML.
+
+---
+
+## 3. Exploratory Data Analysis (Understanding the data)
+
+I visualized the data using plots such as:
+
+- Price distribution  
+- Discount distribution  
+- Price vs discount  
+- Hotel star rating count  
 - Correlation heatmap  
-- Booking patterns over time  
-- Feature relationships  
+
+These charts helped me understand how hotels behave with pricing and discounts.
 
 ---
 
-## 4. Clustering (KMeans)  
-Hotels were segmented into **3 clusters** based on  
-`price_per_night` & `discount_pct`.
+## 4. Clustering (KMeans)
 
-**Clusters identified:**
-1. **Budget Hotels** → Low price, High discount  
-2. **Mid-range Hotels** → Medium price, Moderate discount  
-3. **Premium Hotels** → High price, Low discount  
+I grouped hotels into 3 clusters based on their  
+**price_per_night** and **discount_pct**.
 
-The final cluster scatter plot visually shows how hotels group based on pricing strategy.
+### 🔹 Cluster meanings:
+1. **Budget Hotels** → Low price & high discount  
+2. **Mid-range Hotels** → Medium price & moderate discount  
+3. **Premium Hotels** → High price & low discount  
 
----
-
-## 5. (Optional) ML Model  
-A baseline model was tested (RandomForest/XGBoost)  
-for predicting room availability/bookings.  
-Achieved strong performance with **R² ≈ 0.94**.
-
-*This step is optional and not required to understand the clustering insights.*
+This helped me understand which hotels are discount-heavy and which ones depend more on brand value.
 
 ---
 
-## 6. Results & Insights  
-- Lower-priced hotels use aggressive discount strategies.  
-- Premium hotels rarely offer high discounts.  
-- Discount percentage alone does not strongly correlate with bookings.  
-- Price and discount combinations reveal natural clusters in hotel behavior.  
+## 5. ML Model (Just for checking)
 
-These insights can help hotels optimize pricing and discount patterns for better bookings.
+I used **RandomForestRegressor** to see if my features can predict bookings/room availability.
+
+- Model performance: **R² ≈ 0.94**
+
+This step confirm that the feature engineering was correct.
 
 ---
 
-## How to Run the Notebook
+## 6. Key Insights 
 
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
+- Budget hotels use discounts more aggressively  
+- Premium hotels don’t need big discounts  
+- Discount alone doesn’t guarantee bookings  
+- Combination of price + discount + timing matters  
+- Clustering gives a clear picture of hotel behavior  
+
+----------------------------------------------------------------------
