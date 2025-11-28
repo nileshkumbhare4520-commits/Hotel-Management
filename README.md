@@ -3,20 +3,6 @@
 Analyzed hotel pricing data to find which discounts increase bookings and built visualizations & clusters to optimize discount strategy.
 
 ## Project structure
-
-Hotel-Management/
-├─ data/
-│ ├─ raw/ # original hotels_data.csv
-│ └─ processed/ # (optional) processed CSVs
-├─ notebooks/
-│ └─ preprocess.ipynb # main analysis (EDA, FE, clustering)
-├─ static/
-│ └─ output.png # cluster plot (generated)
-├─ app.py # small Flask app to generate and show the plot
-├─ requirements.txt
-└─ README.md
-
-
 ---
 
 ## 1. Data Cleaning  
